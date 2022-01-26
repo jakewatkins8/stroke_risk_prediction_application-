@@ -1,0 +1,12 @@
+.pageFooter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    margin: 1em auto auto auto;
+    padding: 2em;
+    background-color: #ecffe9;
+    border-radius: 0 0 5px 5px;
+}

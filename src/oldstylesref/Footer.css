@@ -1,0 +1,22 @@
+.pageFooter {
+    margin-top: auto;
+    /* font-family: 'Questrial', sans-serif; */
+    width: 100%;
+    background-color: #5F7BE1;
+    height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    /* padding-bottom: 3%; */
+
+    margin-top: 1rem;
+    /* ROUNDED */
+    border-radius: 0 0 5px 5px;
+}
+
+.pageFooter span {
+    padding: 1rem 0 0.5rem 0;
+    width: 100%;
+    /* padding: 1rem; */
+}

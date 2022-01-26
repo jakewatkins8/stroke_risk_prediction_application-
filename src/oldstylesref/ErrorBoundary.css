@@ -1,0 +1,57 @@
+.errorheader {
+
+}
+
+.errorwrapper {
+    margin: auto;
+    margin-bottom: 30vh;
+    height: 70vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.link {
+    display: block;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 5vh;
+    background-color: rgb(101, 74, 255);
+    border-radius: 999px;
+
+    font-size: 1.2em;
+    width: 50%;
+}
+
+.link:hover {
+    background-color: rgb(152, 133, 255);
+}
+
+.link, .link:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.face {
+    font-size: 6rem !important;
+    margin: 0;
+}
+
+@media screen and (max-width: 400px) {
+
+    .face {
+        font-size: 4rem !important;
+    }
+
+    .link {
+        width: 70%;
+    }
+}

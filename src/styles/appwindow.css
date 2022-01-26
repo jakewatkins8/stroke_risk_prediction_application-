@@ -1,0 +1,13 @@
+.appwindow {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 96%;
+    margin: 0.5em auto 0.5em auto;
+    margin-top: 0.5em;
+    background-color: #64b188;
+    /* background-color: #ecffe9; */
+    border-radius: 5px;
+
+    max-width: 1200px;
+}

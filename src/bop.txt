@@ -1,0 +1,55 @@
+// sqlite:
+
+CREATE TABLE patient (
+	id INTEGER NOT NULL, 
+	gender VARCHAR NOT NULL, 
+	age INTEGER NOT NULL, 
+	hyper INTEGER NOT NULL, 
+	heart_d INTEGER NOT NULL, 
+	ever_married VARCHAR NOT NULL, 
+	work_type VARCHAR NOT NULL, 
+	res_type VARCHAR NOT NULL, 
+	avg_glucose FLOAT NOT NULL, 
+	bmi FLOAT NOT NULL, 
+	smoking VARCHAR NOT NULL, 
+	stroke INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+// pgAdmin (for patient)
+
+-- Table: public.patient
+
+-- DROP TABLE public.patient;
+
+CREATE TABLE IF NOT EXISTS public.patient
+(
+    id integer NOT NULL DEFAULT nextval('patient_id_seq'::regclass),
+    gender character varying COLLATE pg_catalog."default" NOT NULL,
+    age integer NOT NULL,
+    hyper integer NOT NULL,
+    heart_d integer NOT NULL,
+    ever_married character varying COLLATE pg_catalog."default" NOT NULL,
+    work_type character varying COLLATE pg_catalog."default" NOT NULL,
+    res_type character varying COLLATE pg_catalog."default" NOT NULL,
+    avg_glucose double precision NOT NULL,
+    bmi double precision NOT NULL,
+    smoking character varying COLLATE pg_catalog."default" NOT NULL,
+    stroke integer NOT NULL,
+    CONSTRAINT patient_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.patient
+    OWNER to postgres;
+
+///
+
+C:\Program Files\PostgreSQL\14\bin\pg_dump.exe --file "backedup.dump" --host "localhost" --port "5433" --username "postgres" --no-password --verbose --format=c --blobs --compress "8" --no-owner --section=pre-data --section=data --section=post-data --no-privileges --no-tablespaces --no-unlogged-table-data --no-comments "strokedb"
+C:\Program Files\PostgreSQL\14
+
+'C:\Program Files\PostgreSQL\14\bin\pg_dump.exe' --file "backedup.dump" --host "localhost" --port "5433" --username "postgres" --no-password --verbose --format=c --blobs --compress "8" --no-owner --section=pre-data --section=data --section=post-data --no-privileges --no-tablespaces --no-unlogged-table-data --no-comments "strokedb"
+
+
+pg_dump.exe --file "C:\Users\watki\Desktop\backups\backup.dump" --host "localhost" --port "5433" --username "postgres" --no-password --verbose --format=c --blobs --compress "8" --no-owner --section=pre-data --section=data --section=post-data --no-privileges --no-tablespaces --no-unlogged-table-data --no-comments "strokedb"

@@ -1,0 +1,766 @@
+.dataVisualsWrapper {
+    display: flex; 
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+
+    /* background-color: #ecffe9; */
+
+}
+
+.dataPageTitle {
+
+    background-color: #00806a;
+    width: 98%;
+    height: 6em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.plotsTitle {
+
+    background-color: #00806a;
+    width: 90%;
+    height: 3em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+#titleHr {
+    width: 80%;
+}
+
+/* a spacing div */
+.space {
+    height: 3em;
+}
+
+hr {
+    border-style: solid;
+    width: 60%;
+    color: black;
+    margin-bottom: 3vh; 
+}
+
+.plotWrapper {
+
+    /* background-color: #ecffe9; */
+    background-color: #00806a;
+
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 96%;
+
+    border-radius:  10px;
+
+    /* maybe: */
+    /* height: 200vmin; */
+    /* no; leads to sizing issues with small screen...? */
+}
+
+.plotSwitchPairWrapper {
+    /* min-width: 360px; */
+    width: 80%;
+    max-width: 650px;
+    /* background-color: gainsboro; */
+}
+
+
+
+.switchWrapper {
+    position: relative;
+    /* background-color: red; */
+}
+
+.interactivePlotSwitchContainer {
+    /* margin-left: 1em; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    /* width: 40%; */
+    width: 50%;
+    max-width: 200px;
+    min-width: 120px;
+    margin-top: 2em;
+    height: 2.5em;
+    padding: 0 0.1em 0 0.1em;
+
+    background-color: #00b99a;
+    border-radius: 5px 5px 0 0;
+
+}
+
+/* make plots wider on less-wide screens */
+/* also, scoot interactive switches over slightly */
+@media screen and (max-width: 450px) {
+
+    .plotWrapper {
+        width: 100%;
+    }
+
+    .plotSwitchPairWrapper {
+        width: 100%;
+    }
+
+    .interactivePlotSwitchContainer {
+        margin-left: 1em;
+        /* height: 3em; */
+        max-width: 150px;
+    }
+
+
+    .interactivePlotSwitch_Off, .interactivePlotSwitch_On {
+        width: 3em;
+        height: 3em;
+    }
+
+}
+
+/* resize plots 1, 3 through 5, and custom plot titles if window less than 485 px wide */
+@media screen and (max-width: 485px) {
+
+    .plot1 .gtitle, .plot3 .gtitle, .plot4 .gtitle, .plot5 .gtitle {
+        /* fill: red !important; */
+
+        /* for now, for mobile: */
+        font-size: 3vw !important;
+
+    }
+}
+
+/* resize the scatter plot (plot 2) text if window less than 700 px wide */
+@media screen and (max-width: 700px) {
+
+    .scatter .gtitle, .custPlot .gtitle {
+        /* fill: red !important; */
+
+        /* for now, for mobile: */
+        font-size: 2.3vw !important;
+
+    }
+} 
+
+.custPlot {
+    margin-bottom: 4em;
+}
+
+.infoBox {
+
+    width: 90%;
+
+    color: white;
+
+    background-color: #00806a;
+    margin: 2% auto 2% auto;
+    padding: 3% 1.5% 3% 1.5%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+
+    padding: 3em;
+}
+
+#plotswitchcaption {
+    font-size: 0.7em;
+    margin-bottom: 2em;
+}
+
+
+.demonstrativePlotSwitchContainer {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    width: 50%;
+    min-width: 120px;
+    max-width: 200px;
+    height: 2.5em;
+    padding: 0.2em;
+    margin: 1em 0 0.4em 0;
+
+    background-color: #00b99a;
+    border-radius: 5px 5px 0 0 ;
+}
+
+.infoBox .switchWrapper {
+    /* background-color: red; */
+    width: 100%;
+}
+
+#demonstrativeCheckbox {
+    cursor: initial;
+    /* user-select: none; */
+
+    background-color: #000 !important;
+}
+
+/* separate the interactive check from the label a bit: */
+.interactivePlotSwitchContainer input {
+    margin-left: 0.5em;
+}
+
+.interactivePlotSwitchContainer label {
+    cursor: pointer;
+}
+
+.interactivePlotSwitch_Off, .interactivePlotSwitch_On {
+    appearance: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    /* bgcolor below is overridden by react inline styles */
+    /* background-color: #0000AA; */
+
+    appearance: none;
+    position: relative;
+    /* width: 1.7rem;
+    height: 1.4rem; */
+    width: 2em;
+    height: 1.5em;
+    border-radius: 5px;
+    /* border: solid black 1px; */
+}
+
+.interactivePlotSwitch_Off::after {
+/* content: '…'; */
+content: 'OFF';
+font-size: 0.5em;
+font-weight: bold;
+color: white;
+/* margin-bottom: 40%; */
+}
+
+.interactivePlotSwitch_On::after {
+    /* content: '✕'; */
+    content: 'ON';
+    font-size: 0.5em;
+    font-weight: bold;
+    color: black;
+    /* margin-bottom: 7%; */
+}
+
+
+.plot1, .plot2, .plot3, .plot4, .plot5, .custPlot {
+
+    /* border: solid 1px black; */
+
+    position: relative;
+    width: 100%;
+
+    /* the bug of the 1st plot loading in @ height=0px was fixed by setting a min. height.
+    I am not sure what was happening here.
+    */
+    min-height: 360px;
+}
+
+.performanceBox {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #e1ffec;
+
+    border-radius: 10px;
+
+    width: 96%;
+
+    padding: 2em 0 4em 0;
+    margin-bottom: 6em;
+
+}
+
+.modelPerfTitle {
+    background-color: #00806a;
+    width: 80%;
+    height: 3em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.plot5 {
+    margin-bottom: 2em;
+}
+
+.plot1screen, .plot2screen, .plot3screen, .plot4screen, .plot5screen, .custPlotScreen {
+    opacity: 0.0;
+    position: absolute;
+    top: 0;
+}
+
+.custPlotTitle {
+
+    
+    background-color: #00806a;
+    width: 96%;
+    height: 3em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+
+}
+
+.custTooltip {
+    font-family: "Open Sans", verdana, arial, sans-serif;
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 4;
+    color: #FFF;
+}
+
+.custTooltip span {
+    font-size: 1em;
+    padding: 5% 4% 5% 4%;
+    background-color: #005345c4;
+
+}
+
+.responsivePlotWidth {
+    width: 100%;
+    /* the bug of the 1st plot loading in @ height=0px was fixed by setting a min. height.
+    I am not sure what was happening here.
+     */
+    min-height: 470px;
+}
+
+.plot5container {
+    position: relative;
+}
+
+.plot5container::before {
+    /* background-color: lime; */
+    z-index: 5;
+    width: 100%;
+    color: black;
+    font-family: 'Open Sans', 'Verdana';
+    font-size: 0.8rem;
+    content: 'Predictions (x-axis) vs. Actual (y-axis)';
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    
+}
+
+
+.dataVisualsWrapper select {
+    width: 80%;
+}
+
+.scrollInfo {
+    display: none;
+}
+
+/* make plots horizontally scrollable on screens smaller than the iPhone XR (less than 414 px) */
+@media screen and (max-width: 410px) {
+
+    .plot1, .plot2, .plot3, .plot4, .plot5, .custPlot {
+        overflow-x: scroll;
+    }
+
+    .responsivePlotWidth {
+        min-width: 400px;
+    }
+
+    .scrollInfo {
+        display: block;
+    }
+
+    /* reset the fonts of all plot title to appropriate sizes within the scrollable windows: */
+    .scatter .gtitle {
+
+        font-size: 0.8em !important;
+
+    }
+    .plot1 .gtitle, .plot3 .gtitle, .plot4 .gtitle, .plot5 .gtitle, .custPlot .gtitle  {
+
+        font-size: 1.2em !important;
+
+    }
+
+
+}
+
+.smallTableHeader {
+    margin: 2em auto 0.2em auto;
+
+    background-color: #00806a;
+    width: 70%;
+    height: 2em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.headerSubText {
+    font-size: 0.9em;
+    margin: 0 auto 2em auto;
+}
+
+
+
+/* query builder */
+.queryContainer {
+    width: 98%;
+    margin-top: 2em;
+    background-color: #ecffe9;
+    border-radius: 5px;
+
+    /* align-items: center; */
+
+    max-width: 950px;
+
+}
+
+.dataVisualsWrapper .errorMessage {
+    margin: 0 auto 0.3em auto;
+    padding: 1em;
+    width: 80%;
+    background-color: rgb(233, 140, 0);
+    border-radius: 5px;
+
+    max-width: 550px;
+
+}
+
+/* visual styling of select dropdowns on dataVisuals page */
+.dataVisualsWrapper select {
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    /* font-size: 1em; */
+    /* setting to suppress safari iOS zoom on input focus */
+    font-size: 16px !important;
+    height: 2em;
+
+    margin-bottom: 1em;
+}
+
+.queryContainer input {
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    /* font-size: 1em; */
+    /* setting to suppress safari iOS zoom on input focus */
+    font-size: 16px !important;
+    height: 2em;
+
+    margin-bottom: 1em;
+}
+
+.querySentence {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    /* align-items: center; */
+    align-items: flex-end;
+    background-color: #00806a;
+    color: white;
+
+    text-align: right;
+
+    border-radius: 999px;
+    padding: 1em 1em 0 1em;
+    margin: 1em auto 1em auto;
+
+    max-width: 750px;
+
+    width: 98%;
+
+}
+
+.queryContainer button {
+    padding: 1em;
+    margin: 0.5em;
+}
+
+#conditions {
+    background-color: #00806a;
+    width: fit-content;
+    margin: 1em auto 1em auto;
+    border-radius: 5px;
+    padding: 0.5em 2em 0.5em 2em;
+    color: white;
+}
+
+.querySentence p {
+    width: 20%;
+    /* height: 30px; */
+    /* align-self: flex-start; */
+    /* margin: 0;
+    padding: 0; */
+}
+
+#chainOp {
+    width: 20%;
+}
+.querySentence select, .querySentence input {
+    width: 24%;
+}
+
+
+#note {
+    font-size: 0.8em;
+}
+
+/* query show and hide buttons */
+.datasetControl {
+    margin: 2em;
+    padding: 1em;
+    min-width: 50%;
+    max-width: 400px;
+}
+
+.resultsHeader, .resultsInfo {
+    color: white;
+    background-color: #00806a;
+    width: 60%;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+.resultsHeader {
+
+       
+    background-color: #00806a;
+    width: 70%;
+    height: 3em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.resultsHeader {
+margin-bottom: 0.1em;
+}
+
+.resultsInfo {
+    width: 40%;
+    margin-top: 0.1em;
+}
+
+.fullDataSetTitle {
+       
+    background-color: #00806a;
+    width: 70%;
+    height: 3em;
+    padding: 1em auto 1em auto;
+    border-radius: 200px 200px 500px 500px ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+/* re-style the query builder on less-wide screens */
+@media screen and (max-width: 450px) {
+
+    .queryContainer {
+        width: 96%;
+    }
+
+    .querySentence {
+
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+    
+        /* border-radius: 30px; */
+        border-radius: 40px;
+        padding: 1em;
+        margin: 0.5em auto 0.5em auto;
+
+        width: fit-content;
+    
+    }
+
+    .querySentence * {
+        width: 90% !important;
+    }
+
+    .dataVisualsWrapper select {
+        margin-bottom: 0.2em;
+    }
+    
+    .queryContainer input {
+        margin-bottom: 0.2em;
+    }
+    
+
+}
+
+
+/* data metrics tables & query result tables */
+
+.tableOuterWrapper {
+    width: 92%;
+    background-color: #00806a;
+    overflow: hidden;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+.tableOuterWrapper_collapsed {
+    display: none;
+}
+
+.tableInnerWrapper {
+    max-height: 60vh;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    /* scrollbar-color: blue navy; 
+    firefox only scrollbar customization */
+}
+
+.tableInnerWrapper::-webkit-scrollbar {
+    width: 20px;
+    background-color: #233b37;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-track:active {
+    background: #4ea092;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-corner {
+    background: #00947b;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-thumb {
+    background: #00c997;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-thumb:hover {
+    background: #00ffbf;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-thumb:active {
+    background: #00684e;
+}
+
+.dataVisualsWrapper table {
+    width: 100%;
+    text-align: center;
+    background-color: #00806a;
+    color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.dataVisualsWrapper th {
+    position: sticky;
+    top: 0;
+    font-weight: normal;
+    background-color: #005043;
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+    height: 1.5em;
+    vertical-align: bottom;
+}
+
+.dataVisualsWrapper td {
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+    height: 1.5em;
+    vertical-align: bottom;
+}
+
+.dataVisualsWrapper tr {
+    height: 2em;
+}
+
+.dataVisualsWrapper table > tbody > tr:last-child > td {
+    border-bottom: 0;
+}
+
+.dataVisualsWrapper table > thead > tr > th:last-child {
+    border-right: 0;
+}
+
+.dataVisualsWrapper table > tbody > tr > td:last-child {
+    border-right: 0;
+}
+
+.dataVisualsWrapper tr:hover {
+    background-color: #224640;
+}
+
+.dataVisualsWrapper td:hover {
+    background-color: #00d6b3;
+    color: black;
+}
+
+.spacingBottom {
+    height: 10vh;
+}
+
+.sectionBreak {
+    margin-top: 5em;
+}

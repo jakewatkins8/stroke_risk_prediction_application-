@@ -1,0 +1,67 @@
+body {
+  /* hide scrollbar - debug, observing how vw does not account for scrollbar
+  /* overflow: hidden; */
+  margin: 0;
+  color: white;
+  /* font-family: 'Questrial', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  background-color: #364b6a;
+  width: 100%;
+  text-align: center;
+
+}
+
+body * {
+box-sizing: border-box;
+}
+
+body p {
+  font-weight: lighter;
+}
+
+body h1 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+/* likely no effect */
+body button {
+  font-size: 1rem;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+
+  border: 2px solid rgb(23, 23, 85);
+  color: white;
+  background-color: #4252EB !important;
+  border-radius: 999px;
+}
+
+button:hover {
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: rgb(0, 93, 185);
+}
+
+input:disabled {
+  background-color: dodgerblue;
+}
+
+/* screens smaller than mobile */
+@media screen and (max-width: 450px) {
+  body h1 {
+    font-size: 1rem;
+  }
+
+  body button {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+

@@ -1,0 +1,119 @@
+.settingsWrapper {
+    width: 100%;
+}
+
+.settingsWrapper button {
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 50%;
+    max-width: 500px;
+}
+
+.settingsSpacingTop {
+    height: 5vh;
+}
+
+.settingsSpacingBottom {
+    height: 10vh;
+}
+
+.settingsWrapper .tableOuterWrapper {
+    width: 92%;
+    background-color: #00124e;
+    overflow: hidden;
+    border: solid black 2px;
+    border-radius: 5px;
+
+    margin: 0 auto 0 auto;
+}
+
+.settingsWrapper .tableInnerWrapper {
+    max-height: 60vh;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    /* scrollbar-color: blue navy; 
+    firefox only scrollbar customization */
+}
+
+.settingsWrapper .tableInnerWrapper::-webkit-scrollbar {
+    width: 20px;
+    background-color: #233b37;
+}
+
+.settingsWrapper .tableInnerWrapper::-webkit-scrollbar-track:active {
+    background: #4ea092;
+}
+
+.settingsWrapper .tableInnerWrapper::-webkit-scrollbar-corner {
+    background: #00947b;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.settingsWrapper .tableInnerWrapper::-webkit-scrollbar-thumb {
+    background: #00c997;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+.settingsWrapper .tableInnerWrapper::-webkit-scrollbar-thumb:hover {
+    background: #00ffbf;
+}
+
+.settingsWrapper .tableInnerWrapper::-webkit-scrollbar-thumb:active {
+    background: #00684e;
+}
+
+.settingsWrapper table {
+    width: 100%;
+    text-align: center;
+    background-color: #00806a;
+    color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.settingsWrapper th {
+    position: sticky;
+    top: 0;
+    font-weight: normal;
+    background-color: #005043;
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+    height: 1.5em;
+    vertical-align: bottom;
+}
+
+.settingsWrapper td {
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+    height: 1.5em;
+    vertical-align: bottom;
+}
+
+.settingsWrapper tr {
+    height: 2em;
+}
+
+.settingsWrapper table > tbody > tr:last-child > td {
+    border-bottom: 0;
+}
+
+.settingsWrapper table > thead > tr > th:last-child {
+    border-right: 0;
+}
+
+.settingsWrapper table > tbody > tr > td:last-child {
+    border-right: 0;
+}
+
+.settingsWrapper tr:hover {
+    background-color: #224640;
+}
+
+.settingsWrapper td:hover {
+    background-color: #00d6b3;
+}

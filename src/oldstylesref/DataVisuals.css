@@ -1,0 +1,727 @@
+.dataVisualsWrapper {
+    display: flex; 
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+
+    /* would this be appropriate...? */
+    /* min-width: 400px; */
+}
+
+
+.switchWrapper {
+    position: relative;
+    /* background-color: red; */
+}
+
+.sample {
+    font-size: 5vw;
+}
+
+hr {
+    border-style: solid;
+    width: 60%;
+    color: #5F7BE1;
+    margin-bottom: 3vh; 
+}
+
+h2 {
+    margin-bottom: 1.5vh;
+}
+
+.datasetControl {
+    width: 92.4%;
+    margin-bottom: 0;
+    border-radius: 30px 30px 0 0;
+}
+
+.datasetControl-collapsed {
+    margin-bottom: 0;
+    border-radius: 999px;
+}
+
+.tableOuterWrapper {
+    width: 92%;
+    background-color: #00124e;
+    overflow: hidden;
+    border: solid black 2px;
+    border-radius: 0 0 10px 10px;
+}
+
+.tableOuterWrapper_collapsed {
+    display: none;
+}
+
+.tableInnerWrapper {
+    max-height: 60vh;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    /* scrollbar-color: blue navy; 
+    firefox only scrollbar customization */
+}
+
+.tableInnerWrapper::-webkit-scrollbar {
+    width: 20px;
+    background-color: #00124e;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-track:active {
+    background: #001b75;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-corner {
+    background: #003ad8;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-thumb {
+    background: #2dbdff;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-thumb:hover {
+    background: #2dd5ff;
+}
+
+.tableInnerWrapper::-webkit-scrollbar-thumb:active {
+    background: #2df8ff;
+}
+
+table {
+
+    width: 100%;
+
+    /* position: relative; */
+    text-align: center;
+    background-color: #2632a0;
+    /* background-color: #ffffff; */
+    color: white;
+    font-family: "Questrial", sans-serif;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+
+
+th {
+    position: sticky;
+    top: 0;
+    font-weight: normal;
+    background-color: #2300bd;
+
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+    height: 1.5em;
+    vertical-align: bottom;
+}
+
+td {
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 0 2px 2px 0;
+    text-align: center;
+    height: 1.5em;
+    vertical-align: bottom;
+
+    /* color: black; */
+}
+
+tr {
+    height: 2em;
+}
+
+table > tbody > tr:last-child > td {
+    /* background-color: orange; */
+    border-bottom: 0;
+}
+
+table > thead > tr > th:last-child {
+    /* background-color: red; */
+    border-right: 0;
+}
+
+table > tbody > tr > td:last-child {
+    /* background-color: lightcoral; */
+    border-right: 0;
+}
+
+tr:hover {
+    background-color: #5F7BE1;
+}
+
+td:hover {
+    background-color: #5fa2e1;
+}
+
+.loading {
+    /* width: 92%; */
+    text-align: center;
+    background-color: rgb(44, 3, 141);
+}
+
+.plotWrapper div {
+    /* width: 100%; */
+    /* margin: 2% 0 2% 0; */
+}
+
+/* looking at the HTML markup, the apparent class structure can be seen. */
+
+/* this selects styles for plot titles */
+.gtitle {
+    /* fill: red !important; */
+
+    /* font-family: 'Questrial' !important; */
+
+    /* for now, for mobile: */
+    font-size: 2.4vw;
+
+    /* I...need to get the best font behavior across mobile, web, and...'big.'
+    How I get that, I'm not sure.
+    Maybe with media queries? Or maybe just with css 'functions' like below? */
+    /* font-size: min(3vw, 18px) !important; */
+}
+
+/* this selects all <text> elements in the plotwrapper div - i.e., the plot text. */
+.plotWrapper text {
+    /* fill: red !important; */
+}
+
+/* selects all annotation text (heatmap annotations) */
+.annotation-text {
+    /* fill: blue !important; */
+    /* font-size: min(2vw, 16px) !important; */
+
+    /*  */
+    font-size: 2.3vw !important;
+}
+
+.xtitle {
+    /* this may not even matter for the heatmap -> no x axis title */
+    font-size: min(2.5vw, 12px) !important;
+}
+
+/* selects heatmap color bar axes */
+.cbaxis text {
+    /* fill: red !important; */
+    font-size: min(2vw, 12px) !important;
+}
+
+/* selects axis labels */
+.xtick text, .ytick text {
+    /* fill: red !important; */
+    /* font-size: min(1.7vw, 12px) !important; */
+
+    /* font-size: min(12px, 1.7vw) !important; */
+
+    /*  */
+    font-size: 1.7vw;
+
+}
+
+.plot1, .plot2, .plot3, .plot4, .plot5, .custPlot {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+
+    /* the bug of the 1st plot loading in @ height=0px was fixed by setting a min. height.
+    I am not sure what was happening here.
+    */
+    min-height: 360px;
+
+    /* max-width: 400px; */
+
+    /* the below is not live */
+    /* overflow-x: auto; */
+}
+
+.plotSwitchPairWrapper {
+    min-width: 360px;
+    width: 100%;
+    
+}
+
+.plot5container::before {
+    /* background-color: lime; */
+    width: 100%;
+    color: black;
+    font-family: 'Open Sans', 'Verdana';
+    font-size: 0.8rem;
+    content: 'Predictions (x-axis) vs. Actual (y-axis)';
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+}
+
+/* >>>>>>>>>>>> I Just Changed It To be 450 instead of 350 - JW 10-19-21 9:12pm */
+/* plot behavior for very small screens - i.e., iPhone 5 */
+@media screen and (max-width: 450px) {
+
+    .plotSwitchPairWrapper {
+        /* min-width: none; */
+        /* width: 100%; */
+        /* background-color: purple; */
+        min-width: 100%;
+    }
+
+    .plot1, .plot2, .plot3, .plot4, .plot5, .custPlot {
+        overflow-x: auto;
+    }
+    
+    .plot1::after, .plot2::after, .plot3::after, .plot4::after, .plot5::after, .custPlot::after { 
+        content: "(scroll horizontally as needed to view plot)";
+        font-size: 4vw;
+        position: absolute;
+        color: grey;
+        top: 2%;
+        left: 5%;
+
+        /* why is it not showing for custPlot? */
+        /* z-index: 10; */
+    }
+
+    .responsivePlotWidth {
+        min-width: 400px;
+    }
+
+    /* this is very secondary to a lot of other stuff. */
+    .custTooltip {
+        /* position: sticky;
+        overflow-x: auto;
+        width: 100vw; */
+    }
+}
+
+/* should I set this...? */
+/* plot behavior for larger screens - i.e., surface */
+@media screen and (min-width: 630px) {
+
+    .plot1, .plot2, .plot3, .plot4, .plot5, .custPlotContainer {
+        /* display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;  */
+        /* max-width: 630px; */
+    }
+
+    .plotSwitchPairWrapper {
+        width: 630px;
+        
+    }
+
+    .interactivePlotSwitchContainer {
+        width: 40% !important;
+    }
+
+    .interactivePlotSwitchContainer p {
+        font-size: 1rem !important;
+    }
+
+    .responsivePlotWidth {
+        /* may not matter: */
+        /* display: block !important; */
+    
+        /* background-color: red; */
+        max-width: 630px;
+        /* height: 630px; */
+    
+        /* height: 18%; */
+    
+        /* min-width is not live: */
+        /* min-width: 400px; */
+    
+    
+    
+        /* border: 1px solid grey; */
+    
+        /* the bug of the 1st plot loading in @ height=0px was fixed by setting a min. height.
+        I am not sure what was happening here.
+        Blame plotly. Always blame plotly, I guess.
+         */
+        /* min-height: 400px; */
+    
+        /* min-width: 400px; */
+        /* min-height: 300px; */
+    /* 
+        max-width: 500px;
+        max-height: 500px; */
+    }
+
+    /* plot text styling */
+
+        /* this selects styles for plot titles */
+    .gtitle {
+        /* fill: red !important; */
+
+        /* for now, for mobile: */
+        font-size: 1.3vw !important;
+
+
+        /* I...need to get the best font behavior across mobile, web, and...'big.'
+        How I get that, I'm not sure.
+        Maybe with media queries? Or maybe just with css 'functions' like below? */
+        /* font-size: min(3vw, 18px) !important; */
+    }
+
+    /* this selects all <text> elements in the plotwrapper div - i.e., the plot text. */
+    .plotWrapper text {
+        /* fill: red !important; */
+    }
+
+    /* selects all annotation text (heatmap annotations) */
+    .annotation-text {
+        /* fill: blue !important; */
+        /* font-size: min(2vw, 16px) !important; */
+
+        /*  */
+        font-size: 20px !important;
+    }
+
+    .xtitle {
+        /* this may not even matter for the heatmap -> no x axis title */
+        font-size: min(2.5vw, 12px) !important;
+    }
+
+    /* selects heatmap color bar axes */
+    .cbaxis text {
+        /* fill: red !important; */
+        font-size: min(2vw, 12px) !important;
+    }
+
+    /* selects axis labels */
+    .xtick text, .ytick text {
+        /* fill: red !important; */
+        /* font-size: min(1.7vw, 12px) !important; */
+
+        /* font-size: min(12px, 1.7vw) !important; */
+
+        /*  */
+        font-size: 1.7vw;
+
+    }
+
+}
+
+.responsivePlotWidth {
+    /* may not matter: */
+    /* display: block !important; */
+
+    /* background-color: red; */
+    width: 100%;
+
+    /* height: 18%; */
+
+    /* min-width is not live: */
+    /* min-width: 400px; */
+
+
+
+    /* border: 1px solid grey; */
+
+    /* the bug of the 1st plot loading in @ height=0px was fixed by setting a min. height.
+    I am not sure what was happening here.
+    Blame plotly. Always blame plotly, I guess.
+     */
+    min-height: 400px;
+
+    /* min-width: 400px; */
+    /* min-height: 300px; */
+/* 
+    max-width: 500px;
+    max-height: 500px; */
+}
+
+.plot1screen, .plot2screen, .plot3screen, .plot4screen, .plot5screen, .custPlotScreen {
+    opacity: 0.0;
+    position: absolute;
+    top: 0;
+}
+
+.custTooltip {
+    font-family: "Open Sans", verdana, arial, sans-serif;
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* height: 100%; */
+    text-align: center;
+    /* background-color: rgb(0, 38, 255); */
+    z-index: 4;
+    color: #FFF;
+    /* padding: 2% 10% 2% 10%; */
+}
+
+.custTooltip span {
+
+    /* width: 100%;
+    height: 100%; */
+
+
+    font-size: 0.9rem;
+    padding: 5% 4% 5% 4%;
+    background-color: rgba(101, 74, 255, 0.9);
+}
+
+.plotWrapper {
+
+    /* background-color: cadetblue; */
+
+    /*  */
+    position: relative;
+    /*  */
+
+
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 96%;
+
+    /* maybe: */
+    /* height: 200vmin; */
+    /* no; leads to sizing issues with small screen...? */
+
+    /* min-width: 300px; */
+
+    /*  */
+    /* min-height: 800px; */
+}
+
+.switchWrapper {
+    width: 100%;
+    margin-top: 3%;
+    height: 1.5%;
+}
+
+.interactivePlotSwitchContainer {
+    height: 100%;
+    display: flex;
+    width: 30%;
+    /* margin-left: 0; */
+    flex-flow: row nowrap;
+    justify-content: center;
+    /* text-align: right; */
+    align-items: center;
+    /* padding: 0 0 0 3%; */
+    /* margin-bottom: 0; */
+
+    background-color: rgba(114, 87, 204, 0.541);
+    border-radius: 5px 5px 0 0 ;
+}
+
+.interactivePlotSwitchContainer p {
+    font-size: 0.7rem;
+
+}
+
+.interactivePlotSwitch_Off, .interactivePlotSwitch_On {
+    margin-left: 4%;
+    /* margin-left: 3%; */
+    /*  */
+    -webkit-appearance: none;
+    /*  */
+
+    display: flex;
+    /* flex-flow: column nowrap; */
+    justify-content: center;
+    align-items: center;
+
+    /* text-align: center; */
+
+    cursor: pointer;
+    /* bgcolor below is overridden by react inline styles */
+    /* background-color: #0000AA; */
+
+    appearance: none;
+    position: relative;
+    width: 1.7rem;
+    height: 1.4rem;
+    border-radius: 5px;
+
+    border-width: 2px;
+}
+
+.interactivePlotSwitch_Off::after {
+/* display: inline-block; */
+/* margin-top: 14%; */
+/* content: '⤢'; */
+content: '…';
+font-size: 20px;
+margin-bottom: 40%;
+/* margin-bottom: 20%; */
+/* font-weight: bold; */
+/* margin-top: 3px; */
+}
+
+.interactivePlotSwitch_On::after {
+    content: '✕';
+    font-size: 16px;
+    margin-bottom: 7%;
+    /* margin-bottom: 2px; */
+
+    }
+
+.responsivePlotWidthInteractive {
+    /* may not matter: */
+    /* display: block !important; */
+
+    background-color: red;
+    width: 100%;
+
+    /* the bug of the 1st plot loading in @ height=0px was fixed by setting a min. height.
+    I am not sure what was happening here.
+    Blame plotly. Always blame plotly, I guess.
+     */
+    min-height: 400px;
+
+    /* min-width: 300px; */
+    /* min-height: 300px; */
+/* 
+    max-width: 500px;
+    max-height: 500px; */
+}
+
+.transparentBg {
+    background-color: transparent !important;
+}
+
+.main-svg {
+    /* this works to make the white plot BG disappear: */
+    /* background-color: rgba(255, 255, 255, 0.0) !important; */
+}
+
+
+
+/* but I need programmatic toggling. */
+.responsivePlotWidth .main-svg {
+    background-color: transparent !important;
+}
+
+
+
+div {
+    --plot-bg-color: rgb(169, 202, 255);
+    }
+
+.plotplaceholder {
+    background-color: var(--plot-bg-color);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#loading {
+    position: absolute;
+}
+
+#loading span {
+    color: white;
+    font-size: 1.5em;
+}
+
+.queryContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    /* background-color: green; */
+}
+
+
+
+/* .querySentence {
+    max-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+} */
+
+.queryContainer div {
+    background-color: #4252EB;
+    max-width: 100%;
+    /* display: flex;
+    flex-flow: row wrap; */
+}
+
+.queryContainer input {
+    max-width: 90%;
+}
+
+.selectField {
+    text-align: center;
+}
+
+select {
+    max-width: 90vw;
+}
+
+.spinner {
+    transform-origin: -2vw -2vw; 
+    margin-top: 3vh;
+    margin-left: 7vw;
+    animation-duration: 1s;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 100%;
+    background-color: rgb(0, 217, 255);
+    z-index: 2;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(0.5);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.8);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(0.5);
+    }
+}
+
+.spinner:after {
+    transform-origin: -1vw -1vw;
+    animation-duration: 0.5s;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    content: "";
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 100%;
+    background-color: rgb(0, 4, 255);
+    z-index: 1;
+}
+
+h2, h4 {
+    font-weight: normal;
+}
+
+.scoreTable {
+    font-size: 1.2em;
+}
+
+/* mobile */
+@media screen and (max-width: 450px) {
+
+    .interactivePlotSwitchContainer {
+        width: 50%;
+    }
+}
+
+.gtitle {
+      font-size: 0.8rem !important;
+}

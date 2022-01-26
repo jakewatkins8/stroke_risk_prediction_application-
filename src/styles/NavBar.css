@@ -1,0 +1,223 @@
+.navBarWrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    /* min. height requirement for navbar across screens */
+    min-height: 180px;
+
+    background-color: #ecffe9;
+    border-radius: 5px 5px 0 0;
+}
+
+/* remove link underlines */
+.navBarWrapper * {
+    text-decoration: none !important;
+    color: white;
+}
+
+.navBarWrapper h1 {
+
+    color: black;
+
+}
+
+/* style for navbar before login - only displays the title h1 */
+.loneTitle {
+    /* background-color: red; */
+    /* color: black !important; */
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 0.9em;
+    margin: 0.5em;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerLeftCol {
+    width: 70%;
+
+    /* testing */
+    /* background-color: pink; */
+}
+
+/* style for title text after login - after login, it becomes a link to the root/home page */
+.title {
+
+    /* color: black !important; */
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+
+    
+    /* testing */
+    /* background-color: cadetblue; */
+}
+
+.title h1 {
+    font-size: 1.5em;
+    width: 100%;
+    
+    color: black !important;
+}
+
+/* give no bg color to the container; rather, to its elements */
+.navLinksContainer {
+    /* testing */
+    /* background-color: blueviolet; */
+    height: 50%;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+
+    /* to adjust the navContainer back 1px to the right after the negative margins applied to its children below */
+    margin-left: 1px;
+}
+
+.navLinksContainer > * {
+    background-color: #00806a;
+    
+    padding: 1em;
+
+    
+    /* to cover vertical seams between divs in the container */
+    margin: 0 -1px 0 -1px;
+}
+
+
+.navContainerAccentEdge {
+    /* testing */
+    /* background-color: red; */
+    width: 20%;
+    border-radius: 0 999px 0 0;
+    
+}
+
+
+.navContainerSpacingEdge {
+    /* testing */
+    /* background-color: blue; */
+    width: 5%;
+
+}
+
+.navLinksContainer .link {
+    width: 37.5%;
+    /* center the span text: */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    /* testing */
+    /* background-color: yellow; */
+}
+
+.activeLink {
+    /* background-color: rgb(9, 0, 136); */
+    text-decoration: underline !important;
+}
+
+.navLinksContainer .link:hover {
+    background-color: #00b99a;
+    cursor: pointer;
+
+}
+
+.headerRightCol {
+    width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    /* testing */
+    /* background-color: green; */
+    border-radius: 0 0 0 80px;
+    background-color: #00b99a9d;
+}
+
+/* two respective row boxes for the app monitoring link and the button */
+.headerRightCol > * {
+    width: 100%;
+    height: 50%;
+}
+
+/* center the app monitoring link and the button in their respective row boxes */
+.linkContainer, .buttonContainer {
+    /* testing */
+    /* background-color: coral; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+/* move the app monitoring link to the lower vertical end of its row and bump it upwards 1em from there: */
+.linkContainer {
+    align-items: flex-end;
+}
+.linkContainer > * {
+    margin-bottom: 1em;
+}
+
+/* move the Log Out button to the upper vertical end of its row:  */
+.buttonContainer {
+    align-items: flex-start;
+}
+
+/* style the app monitoring link to look like a button element */
+.linkContainer .appMonitoring {
+    background-color: #00806a;
+    color: white;
+    border: 2px solid black;
+    border-radius: 999px;
+
+    /* font-size: 1em; */
+}
+
+/* also, add the button hover styling to the app monitoring link: */
+.appMonitoring:hover {
+    background-color: #00b99a;
+}
+
+/* center the span text in the app monitoring link: */
+.appMonitoring {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* make the app monitoring link and the button the same size: */
+.linkContainer .appMonitoring, .buttonContainer button {
+    width: 80%;
+    height: 65%;
+}
+
+.headerRightCol .buttonContainer {
+    /* testing */
+    /* background-color: orange; */
+}
+
+/* style the headerRightCol elements to be larger on smaller screens */
+@media screen and (max-width: 450px) {
+    .linkContainer .appMonitoring, .buttonContainer button {
+        /* width: 80%; */
+        height: 70%;
+    }
+
+    /* use smaller text on smaller screens, for fit to the text's bounding boxes */
+    .headerLeftCol, .headerRightCol {
+        font-size: 0.8em;
+    }
+}
+

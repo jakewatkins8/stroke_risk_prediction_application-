@@ -1,0 +1,249 @@
+/* styles whichever NavLink location is active */
+.activeLink {
+    background-color: navy !important;
+}
+
+.headerWrapper {
+
+
+    /* rounded EDGES?! */
+    border-radius: 5px 5px 0 0;
+
+
+    width: 100%;
+
+    /* Decide how to handle overall navbar height */
+    /* height: 150px; */
+    height: 15vh;
+    /*  */
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    background-color: rgb(95, 123, 225);
+
+    /* border: 2px solid rgb(23, 23, 85);
+    border-width: 0 0 2px 0;
+    box-sizing: border-box; */
+    /* margin-top: 40px; */
+}
+
+.headerLeftCol {
+    width: 70%;
+
+    /* background-color: pink; */
+}
+
+.title {
+    height: 50%;
+
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 3.5%;
+}
+
+.titleLink {
+    text-decoration: none;
+}
+.title h1 {
+    margin: 0;
+
+
+    color: white;
+}
+
+.navLinksContainer {
+    height: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    /* padding-left: 3%; */
+
+
+    /* border: 2px solid rgb(23, 23, 85); */
+    
+    /* this corrects the 'off-by-border-width' issue! */
+    box-sizing: border-box; 
+/*     
+    border-radius: 0 999px 0 0; */
+    /* border-width: 1px 1px 0 0; */
+
+    /* background-color: rgb(66, 82, 235); */
+    /* background-color: rgb(0, 247, 255); */
+}
+
+.navLinksContainer > *:hover {
+    background-color: cornflowerblue;
+}
+
+
+/* all NavLink elements in the container */
+.navLinksContainer > * {
+
+    background-color: rgb(66, 82, 235);
+
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 35%;
+
+    /* remove link underlines: */
+    text-decoration: none;
+
+    color: white;
+    z-index: 0;
+}
+
+.navLinksContainer span {
+    font-size: 0.6rem;
+}
+
+.navContainerEdge {
+    background-color: rgb(66, 82, 235);
+    /* background-color: pink; */
+    width: 30%;
+    border-radius: 0 999px 0 0;
+}
+
+/* override the navLinksContainer > *:hover behavior for the edge: */
+.navContainerEdge:hover {
+    background-color: rgb(66, 82, 235);
+}
+
+.headerRightCol {
+    width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2%;
+
+    /* background-color: green; */
+}
+
+.headerRightCol > * {
+    width: 80%;
+    /* width: 5rem; */
+    width: 100%;
+    height: 30%;
+
+    /* background-color: red; */
+    margin-bottom: 3%;
+
+    border-radius: 999px;
+}
+
+.appMonitoring {
+    /* margin-bottom: 3%; */
+/* 
+    width: 68%;
+    max-width: 200px; */
+    height: 2rem;
+    min-height: 30px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none !important;
+
+    /* add the button border info */
+    border: 2px solid rgb(23, 23, 85);
+
+    color: white;
+    background-color: #4252EB !important;
+    /* font-family: 'Questrial', sans-serif; */
+    /* font-size: 1.1em; */
+
+}
+
+/* make the App Monitoring button 100% of the width of the NavLink containing it: */
+button {
+    width: 100%;
+    height: 100%;
+}
+
+/* approximately mobile screens (iPhone X) */
+@media screen and (max-width: 450px) {
+/* 
+    .headerRightCol > button {
+        margin-top: 10%;
+    }
+
+    .headerRightCol > * {
+        margin-bottom: 0%;
+        margin-top: 2%;
+    } */
+
+  }
+
+/* smaller screens (iPhone 5, SE) */
+@media screen and (max-width: 375px) {
+
+/* .headerWrapper {
+    height: 15vh;
+}
+
+.headerLeftCol {
+    width: 75%;
+}
+
+.headerRightCol {
+    width: 25%;
+}
+
+.headerRightCol > button {
+    margin-top: 10%;
+}
+
+.headerRightCol > * {
+    margin-bottom: 0%;
+    margin-top: 2%;
+}
+
+.navLinksContainer * {
+    font-size: 0.7rem;
+} */
+}
+
+
+
+
+.activeLink {
+    text-decoration: underline !important;
+    background-color: initial;
+    color: rgb(255, 255, 255);
+
+    /* background-color: rgba(0, 0, 128, 0.096);
+    border-radius: 100%; */
+}
+
+
+
+
+
+button:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+.appMonitoring:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+  
+
+
+/* test */
+
+/* using just contrast to represent buttons as opposed to borders */
+button, .appMonitoring {
+    /* border: none !important; */
+}
